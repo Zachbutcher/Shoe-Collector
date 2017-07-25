@@ -13,6 +13,8 @@
 		BD5D00FD1F26098500DC13AF /* Shoe_Collector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD5D00FB1F26098500DC13AF /* Shoe_Collector.xcdatamodeld */; };
 		BD5D00FF1F26098500DC13AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD5D00FE1F26098500DC13AF /* Assets.xcassets */; };
 		BD5D01021F26098500DC13AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD5D01001F26098500DC13AF /* LaunchScreen.storyboard */; };
+		BD5D010A1F260BD400DC13AF /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D01091F260BD400DC13AF /* CreateGameViewController.swift */; };
+		BD5D010C1F2753B600DC13AF /* 5084806-1333047114-50245.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD5D010B1F2753B600DC13AF /* 5084806-1333047114-50245.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BD5D00FE1F26098500DC13AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD5D01011F26098500DC13AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD5D01031F26098500DC13AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD5D01091F260BD400DC13AF /* CreateGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
+		BD5D010B1F2753B600DC13AF /* 5084806-1333047114-50245.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5084806-1333047114-50245.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 		BD5D00F31F26098500DC13AF /* Shoe Collector */ = {
 			isa = PBXGroup;
 			children = (
+				BD5D010B1F2753B600DC13AF /* 5084806-1333047114-50245.jpg */,
 				BD5D00F41F26098500DC13AF /* AppDelegate.swift */,
 				BD5D00F61F26098500DC13AF /* ViewController.swift */,
+				BD5D01091F260BD400DC13AF /* CreateGameViewController.swift */,
 				BD5D00F81F26098500DC13AF /* Main.storyboard */,
 				BD5D00FE1F26098500DC13AF /* Assets.xcassets */,
 				BD5D01001F26098500DC13AF /* LaunchScreen.storyboard */,
@@ -129,6 +135,7 @@
 				BD5D01021F26098500DC13AF /* LaunchScreen.storyboard in Resources */,
 				BD5D00FF1F26098500DC13AF /* Assets.xcassets in Resources */,
 				BD5D00FA1F26098500DC13AF /* Main.storyboard in Resources */,
+				BD5D010C1F2753B600DC13AF /* 5084806-1333047114-50245.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 			files = (
 				BD5D00FD1F26098500DC13AF /* Shoe_Collector.xcdatamodeld in Sources */,
 				BD5D00F71F26098500DC13AF /* ViewController.swift in Sources */,
+				BD5D010A1F260BD400DC13AF /* CreateGameViewController.swift in Sources */,
 				BD5D00F51F26098500DC13AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

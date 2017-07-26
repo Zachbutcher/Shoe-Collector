@@ -39,8 +39,7 @@
                     <navigationItem key="navigationItem" id="00X-Jz-tM4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="B6k-WB-KdJ">
                             <connections>
-                                <action selector="addNewItem:" destination="BYZ-38-t0r" id="59A-MM-fV7"/>
-                                <segue destination="uRd-sU-rQ1" kind="show" identifier="createGameSegue" id="Fsq-Wu-TjG"/>
+                                <segue destination="uRd-sU-rQ1" kind="show" identifier="createGameSegue" id="IeX-HO-zB7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -83,6 +82,15 @@
                                     <action selector="addShoes:" destination="uRd-sU-rQ1" eventType="touchUpInside" id="AlM-iU-Jdr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v7-fD-fLi">
+                                <rect key="frame" x="41" y="461" width="293" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addShoes:" destination="uRd-sU-rQ1" eventType="touchUpInside" id="a7S-5V-G7Z"/>
+                                    <action selector="deleteShoe:" destination="uRd-sU-rQ1" eventType="touchUpInside" id="qNh-Ds-uB2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,6 +122,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="Lso-kr-kI4" id="JYh-zD-hm4"/>
                         <outlet property="imagePreview" destination="cu5-Yf-Mtf" id="iov-lk-CoL"/>
                         <outlet property="titleTextField" destination="4cU-WL-xOt" id="JlM-k5-m71"/>
                     </connections>

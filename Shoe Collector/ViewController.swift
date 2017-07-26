@@ -40,13 +40,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let shoe = shoes[indexPath.row]
             
         cell.textLabel?.text = shoe.name
+        cell.imageView?.image = UIImage(data: shoe.image! as Data)
         
         return cell
     }
-
-    @IBAction func addNewItem(_ sender: Any) {
-       performSegue(withIdentifier: "createGameSegue", sender: nil)
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let shoe = shoes[indexPath.row]
+        performSegue(withIdentifier: "createGameSegue", sender: shoe)
     }
+    
     
     func getShoes(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -60,17 +63,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
 
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        /*
         if segue.identifier == ("createGameSegue"){
             let nextVC = segue.destination as! CreateGameViewController
             
-            nextVC.task = sender as! Task
-            nextVC.selectedindex = selectedindex
+            nextVC.shoe = sender as? Shoes
         }
-*/
+
     }
 }
 

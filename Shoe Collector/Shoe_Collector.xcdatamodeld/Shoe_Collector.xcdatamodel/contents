@@ -3,9 +3,8 @@
     <entity name="Shoes" representedClassName="Shoes" syncable="YES" codeGenerationType="class">
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="picture" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Shoes" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Shoes" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

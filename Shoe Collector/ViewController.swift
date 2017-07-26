@@ -8,24 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var searchController: UISearchBar!
+    
     var shoes : [Shoes] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.dataSource = self
         tableview.delegate = self
+        
+        searchController.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getShoes()
+        getShoes(filterString: nil)
         tableview.reloadData()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,11 +42,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let shoe = shoes[indexPath.row]
-            
+        
         cell.textLabel?.text = shoe.name
         cell.imageView?.image = UIImage(data: shoe.image! as Data)
         
         return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty{
+            getShoes(filterString: searchBar.text)
+        }
+        tableview.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -50,26 +61,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "createGameSegue", sender: shoe)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchController.endEditing(true)
+    }
     
-    func getShoes(){
+    
+    func getShoes(filterString: String?){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         do {
             try shoes = context.fetch(Shoes.fetchRequest()) as! [Shoes]
-            print (shoes)
         }catch{
             
         }
         
+        if filterString != nil{
+            shoes = shoes.filter { (mod) -> Bool in
+                return (mod.name?.lowercased().contains(filterString!.lowercased()))!}
+        }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ("createGameSegue"){
             let nextVC = segue.destination as! CreateGameViewController
             
             nextVC.shoe = sender as? Shoes
         }
-
+        
     }
 }
 

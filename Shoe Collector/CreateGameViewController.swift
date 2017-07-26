@@ -8,13 +8,12 @@
 
 import UIKit
 
-class CreateGameViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate{
+class CreateGameViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var imagePreview: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
     
     var imagePicker = UIImagePickerController()
     var shoe : Shoes? = nil
@@ -22,7 +21,6 @@ class CreateGameViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)

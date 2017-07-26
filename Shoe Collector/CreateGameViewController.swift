@@ -13,6 +13,7 @@ class CreateGameViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var imagePreview: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var imagePicker = UIImagePickerController()
     var shoe : Shoes? = nil
@@ -20,10 +21,13 @@ class CreateGameViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         imagePicker.delegate = self
         
         if shoe == nil{
-            
+            deleteButton.isHidden = true
         }
         if shoe != nil {
             imagePreview.image = UIImage(data: shoe!.image! as Data)
@@ -81,8 +85,26 @@ class CreateGameViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func deleteShoe(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let newShoes = Shoes(context: context)
-
+        context.delete(shoe!)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
     /*
      // MARK: - Navigation

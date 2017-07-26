@@ -11,7 +11,6 @@
 		BD5D00F71F26098500DC13AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D00F61F26098500DC13AF /* ViewController.swift */; };
 		BD5D00FA1F26098500DC13AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD5D00F81F26098500DC13AF /* Main.storyboard */; };
 		BD5D00FD1F26098500DC13AF /* Shoe_Collector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD5D00FB1F26098500DC13AF /* Shoe_Collector.xcdatamodeld */; };
-		BD5D00FF1F26098500DC13AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD5D00FE1F26098500DC13AF /* Assets.xcassets */; };
 		BD5D01021F26098500DC13AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD5D01001F26098500DC13AF /* LaunchScreen.storyboard */; };
 		BD5D010A1F260BD400DC13AF /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D01091F260BD400DC13AF /* CreateGameViewController.swift */; };
 		BD5D010C1F2753B600DC13AF /* 5084806-1333047114-50245.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BD5D010B1F2753B600DC13AF /* 5084806-1333047114-50245.jpg */; };
@@ -23,7 +22,6 @@
 		BD5D00F61F26098500DC13AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD5D00F91F26098500DC13AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD5D00FC1F26098500DC13AF /* Shoe_Collector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shoe_Collector.xcdatamodel; sourceTree = "<group>"; };
-		BD5D00FE1F26098500DC13AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD5D01011F26098500DC13AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD5D01031F26098500DC13AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD5D01091F260BD400DC13AF /* CreateGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +63,6 @@
 				BD5D00F61F26098500DC13AF /* ViewController.swift */,
 				BD5D01091F260BD400DC13AF /* CreateGameViewController.swift */,
 				BD5D00F81F26098500DC13AF /* Main.storyboard */,
-				BD5D00FE1F26098500DC13AF /* Assets.xcassets */,
 				BD5D01001F26098500DC13AF /* LaunchScreen.storyboard */,
 				BD5D01031F26098500DC13AF /* Info.plist */,
 				BD5D00FB1F26098500DC13AF /* Shoe_Collector.xcdatamodeld */,
@@ -105,6 +102,7 @@
 				TargetAttributes = {
 					BD5D00F01F26098500DC13AF = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 32RLU5XTKN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -133,7 +131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD5D01021F26098500DC13AF /* LaunchScreen.storyboard in Resources */,
-				BD5D00FF1F26098500DC13AF /* Assets.xcassets in Resources */,
 				BD5D00FA1F26098500DC13AF /* Main.storyboard in Resources */,
 				BD5D010C1F2753B600DC13AF /* 5084806-1333047114-50245.jpg in Resources */,
 			);
@@ -274,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 32RLU5XTKN;
 				INFOPLIST_FILE = "Shoe Collector/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nerdobservation.Shoe-Collector";
@@ -286,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 32RLU5XTKN;
 				INFOPLIST_FILE = "Shoe Collector/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nerdobservation.Shoe-Collector";
@@ -313,6 +312,7 @@
 				BD5D01081F26098500DC13AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

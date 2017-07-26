@@ -123,6 +123,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="Lso-kr-kI4" id="JYh-zD-hm4"/>
+                        <outlet property="deleteButton" destination="6v7-fD-fLi" id="dRt-id-B8w"/>
                         <outlet property="imagePreview" destination="cu5-Yf-Mtf" id="iov-lk-CoL"/>
                         <outlet property="titleTextField" destination="4cU-WL-xOt" id="JlM-k5-m71"/>
                     </connections>

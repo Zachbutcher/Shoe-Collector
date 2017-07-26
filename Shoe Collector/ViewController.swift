@@ -8,18 +8,69 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableview: UITableView!
+    var shoes : [Shoes] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableview.dataSource = self
+        tableview.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getShoes()
+        tableview.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shoes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let shoe = shoes[indexPath.row]
+            
+        cell.textLabel?.text = shoe.name
+        
+        return cell
+    }
+
+    @IBAction func addNewItem(_ sender: Any) {
+       performSegue(withIdentifier: "createGameSegue", sender: nil)
+    }
+    
+    func getShoes(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            try shoes = context.fetch(Shoes.fetchRequest()) as! [Shoes]
+            print (shoes)
+        }catch{
+            
+        }
+        
+    }
 
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        /*
+        if segue.identifier == ("createGameSegue"){
+            let nextVC = segue.destination as! CreateGameViewController
+            
+            nextVC.task = sender as! Task
+            nextVC.selectedindex = selectedindex
+        }
+*/
+    }
 }
 

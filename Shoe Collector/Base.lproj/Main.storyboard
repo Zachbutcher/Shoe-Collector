@@ -14,7 +14,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shoe_Collector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Shoe_Collector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,15 +22,31 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-ha-fsg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zNd-ha-fsg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="60d-Ne-ykI"/>
+                            <constraint firstItem="zNd-ha-fsg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Lfn-TV-Ayq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zNd-ha-fsg" secondAttribute="bottom" id="Un4-pX-OOu"/>
+                            <constraint firstAttribute="trailing" secondItem="zNd-ha-fsg" secondAttribute="trailing" id="a64-ki-sJO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="00X-Jz-tM4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="B6k-WB-KdJ">
                             <connections>
+                                <action selector="addNewItem:" destination="BYZ-38-t0r" id="59A-MM-fV7"/>
                                 <segue destination="uRd-sU-rQ1" kind="show" identifier="createGameSegue" id="Fsq-Wu-TjG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="zNd-ha-fsg" id="QTv-EO-bNY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,17 +64,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="5084806-1333047114-50245.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cu5-Yf-Mtf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5084806-1333047114-50245.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cu5-Yf-Mtf">
                                 <rect key="frame" x="41" y="89" width="293" height="234"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Shoes" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cU-WL-xOt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Shoes" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cU-WL-xOt">
                                 <rect key="frame" x="41" y="353" width="293" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="f0F-Zo-xbl"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lso-kr-kI4">
-                                <rect key="frame" x="40.5" y="408" width="293" height="30"/>
+                                <rect key="frame" x="41" y="408" width="293" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addShoes:" destination="uRd-sU-rQ1" eventType="touchUpInside" id="AlM-iU-Jdr"/>
@@ -95,7 +114,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="imagePreview" destination="cu5-Yf-Mtf" id="9dk-kM-1xw"/>
+                        <outlet property="imagePreview" destination="cu5-Yf-Mtf" id="iov-lk-CoL"/>
                         <outlet property="titleTextField" destination="4cU-WL-xOt" id="JlM-k5-m71"/>
                     </connections>
                 </viewController>
